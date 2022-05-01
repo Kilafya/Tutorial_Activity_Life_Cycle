@@ -1,23 +1,15 @@
 package com.example.tutorial_activity_life_cycle
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
-import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_second)
         showText("create")
-
-        val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     override fun onStart() {
@@ -46,6 +38,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showText(state: String) {
-        Log.d("TEST_LIFE_CYCLE", "MainActivity $state")
+        Log.d("TEST_LIFE_CYCLE", "SecondActivity $state")
     }
 }
